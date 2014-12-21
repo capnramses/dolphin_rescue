@@ -1,0 +1,124 @@
+<!doctype HTML>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>Dolphin Rescue (You Only Get One!)</title>
+<style>
+#level_html_div {
+visibility:hidden;
+}
+#intro_overlay {
+top:10px;
+left:10px;
+width:596px;
+height:580px;
+position:absolute;
+background-color:white;
+opacity:0.9;
+filter:alpha(opacity=40); /* For IE8 and earlier */
+moz-border-radius: 15px;
+border-radius: 15px;
+}
+#death_overlay {
+visibility:hidden;
+top:50px;
+left:60px;
+width:496px;
+height:428px;
+position:absolute;
+background-color:white;
+opacity:0.9;
+filter:alpha(opacity=40); /* For IE8 and earlier */
+moz-border-radius: 15px;
+border-radius: 15px;
+}
+#overlay_close_butt {
+bottom:20px;
+left:248px;
+height:50px;
+width:100px;
+position:inherit;
+}
+#author_html {
+color:yellow;
+}
+table {
+border-spacing: 50px 0;
+}
+h1 {
+margin-left:10px;
+}
+h2 {
+margin-left:10px;
+}
+</style>
+</head>
+
+<body onload="main()" style="font-family:sans;">
+
+<div id="intro_overlay">
+<center>
+<h1>Dolphin Rescue</h1>
+</center>
+<hr />
+<table cellspacing=10>
+<tr><td><img src="art/dolphin.png" /></td><td><b>Dolf</b></td><td>That's you!</td></tr>
+<tr><td><img src="art/sailor.png" /></td><td><b>Drowning Sailor</b></td><td>Rescue!</td></tr>
+<tr><td><img height=64 src="art/jolly_boat.png" /></td><td><b>Jollyboat</b></td><td>Take sailors here!</td></tr>
+<tr><td><img src="art/shark.png" /></td><td><b>Shark</b></td><td>Avoid!</td></tr>
+<tr><td><img src="art/dolphin_crazy.png" /></td><td><b>Sonar scream</b></td><td><tt>[spacebar]</tt><br /><i><u>You only get one!</u></i></td></tr>
+</table>
+<p><center><i>Try to reach level 9!</i></center></p>
+</ul>
+<input id ="overlay_close_butt" type="submit" value="Start!" onclick="toggle_intro_overlay()">
+</div>
+
+<div id="death_overlay">
+<center>
+<h1 id="game_over_title">Game Over!</h1>
+<img id="dead_dolphin_place" src="art/dead_dolphin.png" />
+</center>
+<hr />
+<h2>Score</h2>
+<ul>
+<li>You made it to <b id="level_text">level X</b></li>
+<li>You saved <b id="sailor_text">X sailors</b></li>
+</ul>
+<h2>Thanks for Playing!</h2>
+<p style=margin-left:10px;>
+You can refresh the page to start a new game ... if your nerves can take it!
+</p>
+
+<!--
+<a href="https://twitter.com/share" class="twitter-share-button" data-text="Ludum Dare game: Dolphin Rescue is awesome!" data-via="capnramses" data-size="large" data-hashtags="LD48" data-dnt="true">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+-->
+
+</div>
+
+<div id = "level_html_div">
+<p id = "level_html" style = "top:0px;left:10px;position:absolute;font-size:75%">
+level:
+</p>
+</div>
+<p id = "author_html" style = "top:580px;left:10px;position:absolute;font-size:75%">
+Made for Ludum Dare 28 by <b>Anton Gerdelan</b> - <a href="https://twitter.com/capnramses">@capnramses</a>
+</p>
+<canvas id="canvas_gl" width=600 height=600>
+Your browser does not support HTML5. Try Firefox or Google Chrome browser.
+</canvas>
+</body>
+
+<script src="webgl-debug.js"></script>
+<script src="webgl-utils.js"></script>
+<script src="utils.js"></script>
+<script src="audio.js"></script>
+<script src="red_mist.js"></script>
+<script src="shark.js"></script>
+<script src="sailor.js"></script>
+<script src="dolphin.js"></script>
+<script src="seaweed.js"></script>
+<script src="main.js"></script>
+
+</html>
